@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="TreeBase" Name="AS_TreeAnima_Base" Abstract="True">
+		<drawGUIOverlay>True</drawGUIOverlay>
+		<statBases>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<ingestible/>
+		<preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+		<plant>
+			<sowMinSkill>0</sowMinSkill>
+			<sowTags Inherit="False"/>
+			<dieIfNoSunlight>False</dieIfNoSunlight>
+			<dieFromToxicFallout>False</dieFromToxicFallout>
+			<lifespanDaysPerGrowDays>0</lifespanDaysPerGrowDays>
+			<fertilityMin>0.02</fertilityMin>
+			<fertilitySensitivity>0</fertilitySensitivity>
+			<sowResearchPrerequisites Inherit="False"/>
+			<allowAutoCut>false</allowAutoCut>
+		</plant>
+		<comps>
+			<li Class="CompProperties_SpawnSubplant">
+				<compClass>CompSpawnSubplant</compClass>
+				<subplant>Plant_GrassAnima</subplant>
+				<spawnSound>AnimaTreeProgress</spawnSound>
+			</li>
+			<li Class="CompProperties_Psylinkable">
+				<requiredSubplantCountPerPsylinkLevel>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+				</requiredSubplantCountPerPsylinkLevel>
+				<requiredFocus>Natural</requiredFocus>
+				<linkSound>AnimaTreeLink</linkSound>
+				<enoughPlantsLetterLabel>About: Anima tree linking</enoughPlantsLetterLabel>
+				<enoughPlantsLetterText>The anima tree now has {0} anima grass around it. This is enough for a tribal person to begin their first linking ritual!\n\nThe linking ritual gives a level of psylink and the ability to use psychic powers. Upgrading to a higher level requires more grass at each level.\n\nThe anima grass requirements for linking rituals to upgrade psycasters are:\n\n{1}\n\nNote: Only those with the nature focus type can meditate to or link with anima trees. You can see a person's focus types by looking at their info card with the 'i' button.</enoughPlantsLetterText>
+			</li>
+			<li Class="CompProperties_GiveThoughtToAllMapPawnsOnDestroy">
+				<thought>AnimaScream</thought>
+				<message>The anima tree has died and emitted a disturbing psychic scream.</message>
+			</li>
+			<li Class="CompProperties_PlaySoundOnDestroy">
+				<sound>AnimaTreeScream</sound>
+			</li>
+			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="AS_TreeAnima_Base">
+		<defName>AS_Plant_GrowthTreeAnima</defName>
+		<label>anima growth</label>
+		<description/>
+		<graphicData>
+			<texPath>Things/Plant/TreeAnima</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<shadowData>
+				<volume>(0.12, 0.08, 0.1)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<Beauty>2.5</Beauty>
+			<MeditationFocusStrength>0.14</MeditationFocusStrength>
+			<MaxHitPoints>200</MaxHitPoints>
+		</statBases>
+		<ingestible/>
+		<plant>
+			<visualSizeRange>0.5~0.9</visualSizeRange>
+		</plant>
+		<comps>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Natural</li>
+				</focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_BuildingDefs">
+						<defs>
+							<AnimusStone>0.02</AnimusStone>
+							<NatureShrine_Small>0.01</NatureShrine_Small>
+							<NatureShrine_Large>0.01</NatureShrine_Large>
+						</defs>
+						<radius>9.9</radius>
+						<maxBuildings>4</maxBuildings>
+						<explanationKey>MeditationFocusPerAnimusStoneAndShrine</explanationKey>
+						<explanationKeyAbstract>MeditationFocusPerAnimusStoneAndShrineAbstract</explanationKeyAbstract>
+					</li>
+				</offsets>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>1.75</glowRadius>
+				<glowColor>(110,116,125,0)</glowColor>
+			</li>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>500</ticksPerHeal>
+			</li>
+			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="AS_TreeAnima_Base">
+		<defName>AS_Plant_MatureTreeAnima</defName>
+		<label>mature anima tree</label>
+		<description/>
+		<graphicData>
+			<texPath>Things/Plant/TreeAnima</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<shadowData>
+				<volume>(0.12, 0.08, 0.1)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<Beauty>7.5</Beauty>
+			<MeditationFocusStrength>0.56</MeditationFocusStrength>
+			<MaxHitPoints>600</MaxHitPoints>
+		</statBases>
+		<ingestible/>
+		<plant>
+			<visualSizeRange>2.5~3.1</visualSizeRange>
+		</plant>
+		<comps>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Natural</li>
+				</focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_BuildingDefs">
+						<defs>
+							<AnimusStone>0.03</AnimusStone>
+							<NatureShrine_Small>0.03</NatureShrine_Small>
+							<NatureShrine_Large>0.03</NatureShrine_Large>
+						</defs>
+						<radius>9.9</radius>
+						<maxBuildings>4</maxBuildings>
+						<explanationKey>MeditationFocusPerAnimusStoneAndShrine</explanationKey>
+						<explanationKeyAbstract>MeditationFocusPerAnimusStoneAndShrineAbstract</explanationKeyAbstract>
+					</li>
+				</offsets>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>4.75</glowRadius>
+				<glowColor>(110,116,125,0)</glowColor>
+			</li>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>3000</ticksPerHeal>
+			</li>
+			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="AS_TreeAnima_Base">
+		<defName>AS_Plant_ElderTreeAnima</defName>
+		<label>elder anima tree</label>
+		<description/>
+		<graphicData>
+			<texPath>Things/Plant/TreeAnima</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<shadowData>
+				<volume>(0.12, 0.08, 0.1)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+		</graphicData>
+		<statBases>
+			<Beauty>10.0</Beauty>
+			<MeditationFocusStrength>0.92</MeditationFocusStrength>
+			<MaxHitPoints>1000</MaxHitPoints>
+		</statBases>
+		<ingestible/>
+		<plant>
+			<visualSizeRange>3.1~4.2</visualSizeRange>
+		</plant>
+		<comps>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Natural</li>
+				</focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_BuildingDefs">
+						<defs>
+							<AnimusStone>0.03</AnimusStone>
+							<NatureShrine_Small>0.03</NatureShrine_Small>
+							<NatureShrine_Large>0.03</NatureShrine_Large>
+						</defs>
+						<radius>9.9</radius>
+						<maxBuildings>4</maxBuildings>
+						<explanationKey>MeditationFocusPerAnimusStoneAndShrine</explanationKey>
+						<explanationKeyAbstract>MeditationFocusPerAnimusStoneAndShrineAbstract</explanationKeyAbstract>
+					</li>
+				</offsets>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>7.75</glowRadius>
+				<glowColor>(110,116,125,0)</glowColor>
+			</li>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>5000</ticksPerHeal>
+			</li>
+			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
+		</comps>
+	</ThingDef>
+
+</Defs>
