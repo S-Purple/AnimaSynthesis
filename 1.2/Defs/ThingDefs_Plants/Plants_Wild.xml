@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<!--============================ Anima Tree =============================-->
 	<ThingDef ParentName="TreeBase" Name="AS_TreeAnima_Base" Abstract="True">
 		<drawGUIOverlay>True</drawGUIOverlay>
 		<statBases>
@@ -49,7 +50,7 @@
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="AS_TreeAnima_Base">
 		<defName>AS_Plant_GrowthTreeAnima</defName>
 		<label>anima growth</label>
@@ -101,7 +102,7 @@
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="AS_TreeAnima_Base">
 		<defName>AS_Plant_MatureTreeAnima</defName>
 		<label>mature anima tree</label>
@@ -153,7 +154,7 @@
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="AS_TreeAnima_Base">
 		<defName>AS_Plant_ElderTreeAnima</defName>
 		<label>elder anima tree</label>
@@ -204,6 +205,36 @@
 			</li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
+	</ThingDef>
+
+	<!--============================ Anima Plants =============================-->
+
+	<ThingDef ParentName="TreeBase">
+		<defName>AS_Plant_FociAnima</defName>
+		<label>anima foci</label>
+		<description> </description>
+		<statBases>
+			<MaxHitPoints>85</MaxHitPoints>
+			<Flammability>1.3</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Plant/Grass_Anima</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<plant>
+			<fertilityMin>0.02</fertilityMin>
+			<fertilitySensitivity>0</fertilitySensitivity>
+			<sowMinSkill>0</sowMinSkill>
+			<growDays>1</growDays>
+			<lifespanDaysPerGrowDays>60</lifespanDaysPerGrowDays>
+			<harvestWork>40</harvestWork>
+			<maxMeshCount>9</maxMeshCount>
+			<visualSizeRange>0.3~0.45</visualSizeRange>
+			<topWindExposure>0.4</topWindExposure>
+			<wildOrder>1</wildOrder>
+			<dieFromToxicFallout>False</dieFromToxicFallout>
+			<allowAutoCut>false</allowAutoCut>
+		</plant>
 	</ThingDef>
 
 </Defs>
