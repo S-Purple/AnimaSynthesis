@@ -70,7 +70,7 @@
 		</statBases>
 		<ingestible/>
 		<plant>
-			<visualSizeRange>0.5~0.9</visualSizeRange>
+			<visualSizeRange>1.5~2.2</visualSizeRange>
 		</plant>
 		<comps>
 			<li Class="CompProperties_MeditationFocus">
@@ -97,7 +97,7 @@
 				<glowColor>(110,116,125,0)</glowColor>
 			</li>
 			<li Class="CompProperties_SelfhealHitpoints">
-				<ticksPerHeal>500</ticksPerHeal>
+				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
@@ -122,7 +122,7 @@
 		</statBases>
 		<ingestible/>
 		<plant>
-			<visualSizeRange>2.5~3.1</visualSizeRange>
+			<visualSizeRange>4.0~4.5</visualSizeRange>
 		</plant>
 		<comps>
 			<li Class="CompProperties_MeditationFocus">
@@ -149,7 +149,7 @@
 				<glowColor>(110,116,125,0)</glowColor>
 			</li>
 			<li Class="CompProperties_SelfhealHitpoints">
-				<ticksPerHeal>3000</ticksPerHeal>
+				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
@@ -174,7 +174,7 @@
 		</statBases>
 		<ingestible/>
 		<plant>
-			<visualSizeRange>3.1~4.2</visualSizeRange>
+			<visualSizeRange>4.9~5.7</visualSizeRange>
 		</plant>
 		<comps>
 			<li Class="CompProperties_MeditationFocus">
@@ -201,7 +201,7 @@
 				<glowColor>(110,116,125,0)</glowColor>
 			</li>
 			<li Class="CompProperties_SelfhealHitpoints">
-				<ticksPerHeal>5000</ticksPerHeal>
+				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
