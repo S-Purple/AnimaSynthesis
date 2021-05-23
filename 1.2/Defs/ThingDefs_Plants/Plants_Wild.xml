@@ -54,7 +54,7 @@
 	<ThingDef ParentName="AS_TreeAnima_Base">
 		<defName>AS_Plant_GrowthTreeAnima</defName>
 		<label>anima growth</label>
-		<description/>
+		<description>placeholder</description>
 		<graphicData>
 			<texPath>Things/Plant/TreeAnimaGrowth</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
@@ -106,7 +106,7 @@
 	<ThingDef ParentName="AS_TreeAnima_Base">
 		<defName>AS_Plant_MatureTreeAnima</defName>
 		<label>mature anima tree</label>
-		<description/>
+		<description>placeholder</description>
 		<graphicData>
 			<texPath>Things/Plant/TreeAnimaMature</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
@@ -158,7 +158,7 @@
 	<ThingDef ParentName="AS_TreeAnima_Base">
 		<defName>AS_Plant_ElderTreeAnima</defName>
 		<label>elder anima tree</label>
-		<description/>
+		<description>placeholder</description>
 		<graphicData>
 			<texPath>Things/Plant/TreeAnimaElder</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
