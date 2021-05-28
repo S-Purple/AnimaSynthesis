@@ -32,10 +32,34 @@ namespace AnimaSynthesis
 	public class CompRegenerationField : ThingComp
     {
         public CompProperties_RegenerationField Props => this.props as CompProperties_RegenerationField;
+
+        private int activatedTick;
+        public bool Active => Find.TickManager.TicksGame - activatedTick < GenDate.TicksPerDay; // active for 24 hours when activated
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (var g in base.CompGetGizmosExtra())
+            {
+                yield return g;
+            }
+            var command = new Command_Action
+            {
+                defaultLabel = "AS.RegenerationField".Translate(),
+                defaultDesc = "AS.RegenerationFieldDesc".Translate(),
+                action = delegate
+                {
+                    activatedTick = Find.TickManager.TicksGame;
+                }
+            };
+            if (Active)
+            {
+                command.Disable("AS.RegenerationFieldActive".Translate());
+            }
+            yield return command;
+        }
         public override void CompTick()
         {
             base.CompTick();
-            if (this.parent.Spawned)
+            if (this.parent.Spawned && Active)
             {
                 foreach (var pawn in GetAllPawns(this.parent.Map))
                 {
@@ -50,6 +74,12 @@ namespace AnimaSynthesis
                     }
                 }
             }
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref activatedTick, "activatedTick");
         }
 
         public static Dictionary<Map, MapPawns> mapPawns = new Dictionary<Map, MapPawns>();

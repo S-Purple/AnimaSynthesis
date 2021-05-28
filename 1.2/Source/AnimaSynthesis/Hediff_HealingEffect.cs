@@ -32,7 +32,7 @@ namespace AnimaSynthesis
             {
                 this.pawn.health.RemoveHediff(this);
             }
-            if (parent == null || parent.Destroyed || !parent.Spawned)
+            else if (parent == null || parent.Destroyed || !parent.Spawned || (!CompRegenerationField?.Active ?? true))
             {
                 this.pawn.health.RemoveHediff(this);
             }
