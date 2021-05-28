@@ -9,6 +9,7 @@
 		</statBases>
 		<ingestible/>
 		<preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+		<thinkClass>AnimaSynthesis.Plant_AnimaTree</thinkClass>
 		<plant>
 			<sowMinSkill>0</sowMinSkill>
 			<sowTags Inherit="False"/>
@@ -21,25 +22,6 @@
 			<allowAutoCut>false</allowAutoCut>
 		</plant>
 		<comps>
-			<li Class="CompProperties_SpawnSubplant">
-				<compClass>CompSpawnSubplant</compClass>
-				<subplant>Plant_GrassAnima</subplant>
-				<spawnSound>AnimaTreeProgress</spawnSound>
-			</li>
-			<li Class="CompProperties_Psylinkable">
-				<requiredSubplantCountPerPsylinkLevel>
-					<li>20</li>
-					<li>20</li>
-					<li>20</li>
-					<li>20</li>
-					<li>20</li>
-					<li>20</li>
-				</requiredSubplantCountPerPsylinkLevel>
-				<requiredFocus>Natural</requiredFocus>
-				<linkSound>AnimaTreeLink</linkSound>
-				<enoughPlantsLetterLabel>About: Anima tree linking</enoughPlantsLetterLabel>
-				<enoughPlantsLetterText>The anima tree now has {0} anima grass around it. This is enough for a tribal person to begin their first linking ritual!\n\nThe linking ritual gives a level of psylink and the ability to use psychic powers. Upgrading to a higher level requires more grass at each level.\n\nThe anima grass requirements for linking rituals to upgrade psycasters are:\n\n{1}\n\nNote: Only those with the nature focus type can meditate to or link with anima trees. You can see a person's focus types by looking at their info card with the 'i' button.</enoughPlantsLetterText>
-			</li>
 			<li Class="CompProperties_GiveThoughtToAllMapPawnsOnDestroy">
 				<thought>AnimaScream</thought>
 				<message>The anima tree has died and emitted a disturbing psychic scream.</message>
@@ -79,6 +61,17 @@
 					<li>Natural</li>
 				</focusTypes>
 				<offsets>
+					<li Class="AnimaSynthesis.FocusStrengthOffset_ArtificialBuildingsOnlyIndustrialAndHiTech">
+						<radius>34.9</radius>
+						<curve>
+							<points>
+								<li>(0,   0.0)</li>
+								<li>(5,  -0.08)</li>
+								<li>(10, -0.15)</li>
+								<li>(50, -0.3)</li>
+							</points>
+						</curve>
+					</li>
 					<li Class="FocusStrengthOffset_BuildingDefs">
 						<defs>
 							<AnimusStone>0.02</AnimusStone>
@@ -96,9 +89,7 @@
 				<glowRadius>1.75</glowRadius>
 				<glowColor>(110,116,125,0)</glowColor>
 			</li>
-			<li Class="CompProperties_SelfhealHitpoints">
-				<ticksPerHeal>2000</ticksPerHeal>
-			</li>
+
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
 	</ThingDef>
@@ -125,12 +116,42 @@
 			<visualSizeRange>4.0~4.5</visualSizeRange>
 		</plant>
 		<comps>
+			<li Class="CompProperties_SpawnSubplant">
+				<compClass>CompSpawnSubplant</compClass>
+				<subplant>Plant_GrassAnima</subplant>
+				<spawnSound>AnimaTreeProgress</spawnSound>
+			</li>
+			<li Class="CompProperties_Psylinkable">
+				<requiredSubplantCountPerPsylinkLevel>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+				</requiredSubplantCountPerPsylinkLevel>
+				<requiredFocus>Natural</requiredFocus>
+				<linkSound>AnimaTreeLink</linkSound>
+				<enoughPlantsLetterLabel>About: Anima tree linking</enoughPlantsLetterLabel>
+				<enoughPlantsLetterText>The anima tree now has {0} anima grass around it. This is enough for a tribal person to begin their first linking ritual!\n\nThe linking ritual gives a level of psylink and the ability to use psychic powers. Upgrading to a higher level requires more grass at each level.\n\nThe anima grass requirements for linking rituals to upgrade psycasters are:\n\n{1}\n\nNote: Only those with the nature focus type can meditate to or link with anima trees. You can see a person's focus types by looking at their info card with the 'i' button.</enoughPlantsLetterText>
+			</li>
 			<li Class="CompProperties_MeditationFocus">
 				<statDef>MeditationFocusStrength</statDef>
 				<focusTypes>
 					<li>Natural</li>
 				</focusTypes>
 				<offsets>
+					<li Class="AnimaSynthesis.FocusStrengthOffset_ArtificialBuildingsOnlyIndustrialAndHiTech">
+						<radius>34.9</radius>
+						<curve>
+							<points>
+								<li>(0,   0.0)</li>
+								<li>(5,  -0.08)</li>
+								<li>(10, -0.15)</li>
+								<li>(50, -0.3)</li>
+							</points>
+						</curve>
+					</li>
 					<li Class="FocusStrengthOffset_BuildingDefs">
 						<defs>
 							<AnimusStone>0.03</AnimusStone>
@@ -151,6 +172,7 @@
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
+			<li Class="AnimaSynthesis.CompProperties_RainCallOnFire"></li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
 	</ThingDef>
@@ -172,17 +194,48 @@
 			<MeditationFocusStrength>0.92</MeditationFocusStrength>
 			<MaxHitPoints>1000</MaxHitPoints>
 		</statBases>
+		<tickerType>Normal</tickerType>
 		<ingestible/>
 		<plant>
 			<visualSizeRange>4.9~5.7</visualSizeRange>
 		</plant>
 		<comps>
+			<li Class="CompProperties_SpawnSubplant">
+				<compClass>CompSpawnSubplant</compClass>
+				<subplant>Plant_GrassAnima</subplant>
+				<spawnSound>AnimaTreeProgress</spawnSound>
+			</li>
+			<li Class="CompProperties_Psylinkable">
+				<requiredSubplantCountPerPsylinkLevel>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+					<li>20</li>
+				</requiredSubplantCountPerPsylinkLevel>
+				<requiredFocus>Natural</requiredFocus>
+				<linkSound>AnimaTreeLink</linkSound>
+				<enoughPlantsLetterLabel>About: Anima tree linking</enoughPlantsLetterLabel>
+				<enoughPlantsLetterText>The anima tree now has {0} anima grass around it. This is enough for a tribal person to begin their first linking ritual!\n\nThe linking ritual gives a level of psylink and the ability to use psychic powers. Upgrading to a higher level requires more grass at each level.\n\nThe anima grass requirements for linking rituals to upgrade psycasters are:\n\n{1}\n\nNote: Only those with the nature focus type can meditate to or link with anima trees. You can see a person's focus types by looking at their info card with the 'i' button.</enoughPlantsLetterText>
+			</li>
 			<li Class="CompProperties_MeditationFocus">
 				<statDef>MeditationFocusStrength</statDef>
 				<focusTypes>
 					<li>Natural</li>
 				</focusTypes>
 				<offsets>
+					<li Class="AnimaSynthesis.FocusStrengthOffset_ArtificialBuildingsOnlyIndustrialAndHiTech">
+						<radius>34.9</radius>
+						<curve>
+							<points>
+								<li>(0,   0.0)</li>
+								<li>(5,  -0.08)</li>
+								<li>(10, -0.15)</li>
+								<li>(50, -0.3)</li>
+							</points>
+						</curve>
+					</li>
 					<li Class="FocusStrengthOffset_BuildingDefs">
 						<defs>
 							<AnimusStone>0.03</AnimusStone>
@@ -200,8 +253,12 @@
 				<glowRadius>7.75</glowRadius>
 				<glowColor>(110,116,125,0)</glowColor>
 			</li>
+			<li Class="AnimaSynthesis.CompProperties_RainCallOnFire"></li>
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>2000</ticksPerHeal>
+			</li>
+			<li Class="AnimaSynthesis.CompProperties_RegenerationField">
+				<radius>15</radius>
 			</li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>

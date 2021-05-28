@@ -1,0 +1,7 @@
+c:\GAMES\Rimworld\Mods\AnimaSynthesis\1.2\Assemblies\AnimaSynthesis.dll
+c:\GAMES\Rimworld\Mods\AnimaSynthesis\1.2\Assemblies\AnimaSynthesis.pdb
+c:\GAMES\Rimworld\Mods\AnimaSynthesis\1.2\Source\AnimaSynthesis\obj\Debug\AnimaSynthesis.csprojAssemblyReference.cache
+c:\GAMES\Rimworld\Mods\AnimaSynthesis\1.2\Source\AnimaSynthesis\obj\Debug\AnimaSynthesis.csproj.CoreCompileInputs.cache
+c:\GAMES\Rimworld\Mods\AnimaSynthesis\1.2\Source\AnimaSynthesis\obj\Debug\AnimaSynthesis.csproj.CopyComplete
+c:\GAMES\Rimworld\Mods\AnimaSynthesis\1.2\Source\AnimaSynthesis\obj\Debug\AnimaSynthesis.dll
+c:\GAMES\Rimworld\Mods\AnimaSynthesis\1.2\Source\AnimaSynthesis\obj\Debug\AnimaSynthesis.pdb
