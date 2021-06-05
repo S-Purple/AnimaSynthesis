@@ -9,7 +9,7 @@
 		</statBases>
 		<ingestible/>
 		<preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
-		<thinkClass>AnimaSynthesis.Plant_AnimaTree</thinkClass>
+		<thingClass>AnimaSynthesis.Plant_AnimaTree</thingClass>
 		<plant>
 			<sowMinSkill>0</sowMinSkill>
 			<sowTags Inherit="False"/>
@@ -38,7 +38,7 @@
 		<label>anima growth</label>
 		<description>placeholder</description>
 		<graphicData>
-			<texPath>Things/Plant/TreeAnimaGrowth</texPath>
+			<texPath>Things/Plant/AnimaTreeGrowth</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
 			<shadowData>
 				<volume>(0.12, 0.08, 0.1)</volume>
@@ -99,7 +99,7 @@
 		<label>mature anima tree</label>
 		<description>placeholder</description>
 		<graphicData>
-			<texPath>Things/Plant/TreeAnimaMature</texPath>
+			<texPath>Things/Plant/AnimaTreeMature</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
 			<shadowData>
 				<volume>(0.12, 0.08, 0.1)</volume>
@@ -172,7 +172,7 @@
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
-			<li Class="AnimaSynthesis.CompProperties_RainCallOnFire"></li>
+			<li Class="AnimaSynthesis.CompProperties_RainCallOnFire"/>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
 	</ThingDef>
@@ -182,7 +182,7 @@
 		<label>elder anima tree</label>
 		<description>placeholder</description>
 		<graphicData>
-			<texPath>Things/Plant/TreeAnimaElder</texPath>
+			<texPath>Things/Plant/AnimaTreeElder</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
 			<shadowData>
 				<volume>(0.12, 0.08, 0.1)</volume>
@@ -253,12 +253,23 @@
 				<glowRadius>7.75</glowRadius>
 				<glowColor>(110,116,125,0)</glowColor>
 			</li>
-			<li Class="AnimaSynthesis.CompProperties_RainCallOnFire"></li>
+			<li Class="AnimaSynthesis.CompProperties_RainCallOnFire"/>
 			<li Class="CompProperties_SelfhealHitpoints">
 				<ticksPerHeal>2000</ticksPerHeal>
 			</li>
 			<li Class="AnimaSynthesis.CompProperties_RegenerationField">
 				<radius>15</radius>
+			</li>
+			<li Class="AnimaSynthesis.CompProperties_DefensiveShield">
+				<radius>15</radius>
+				<interceptGroundProjectiles>true</interceptGroundProjectiles>
+				<interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+				<interceptOutgoingProjectiles>true</interceptOutgoingProjectiles>
+				<color>(0.6, 0.6, 0.8)</color>
+				<idlePulseSpeed>3</idlePulseSpeed>
+				<minIdleAlpha>0.05</minIdleAlpha>
+				<activeSound>Broadshield_Ambience</activeSound>
+				<activeTicks>60000</activeTicks>
 			</li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>

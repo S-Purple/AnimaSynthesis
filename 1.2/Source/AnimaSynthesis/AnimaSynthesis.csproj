@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AS_DefOf.cs" />
+    <Compile Include="CompDefensiveShield.cs" />
     <Compile Include="Hediff_HealingEffect.cs" />
     <Compile Include="CompRegenerationField.cs" />
     <Compile Include="FocusStrengthOffset_ArtificialBuildingsOnlyIndustrialAndHiTech.cs" />

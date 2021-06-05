@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Royalty</li>
@@ -14,7 +15,7 @@
 							<defName>Plant_TreeAnima</defName>
 							<label>anima tree</label>
 							<description>A rare tree with warm, skin-smooth bark and long iridescent leaves. Infused with bioluminescent micro-organisms, anima trees develop a unique form of psychic symbiosis with surrounding lifeforms, allowing them to grow in a wide variety of biomes.\n\nIf a person (psycaster or not) meditates near an anima tree, it will grow anima grass around its base. Once enough grass is grown, it becomes possible to carry out a psychic linking ritual with the tree and upgrade a person's psychic powers. Only tribal peoples know the secret of this ritual. Tribal psycasters are also able to draw psyfocus from anima trees while meditating to them.\n\nAnima trees' psychic properties are weakened if artificial structures are placed nearby. They refuse to be caged or studied, and must remain part of nature.\n\nMost tribes believe that anima trees are not simply trees, but are rather the physical extremities of a single world spirit.</description>
-							<thinkClass>AnimaSynthesis.Plant_AnimaTree</thinkClass>
+							<thingClass>AnimaSynthesis.Plant_AnimaTree</thingClass>
 							<graphicData>
 								<texPath>Things/Plant/TreeAnima</texPath>
 								<graphicClass>Graphic_Random</graphicClass>
