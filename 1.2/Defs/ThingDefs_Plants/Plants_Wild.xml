@@ -271,6 +271,9 @@
 				<activeSound>Broadshield_Ambience</activeSound>
 				<activeTicks>60000</activeTicks>
 			</li>
+			<li Class="AnimaSynthesis.CompProperties_AnimaScreamerAwakening">
+				<cooldownTicks>420000</cooldownTicks> <!-- 7 days -->
+			</li>
 			<li Class="CompProperties_ToggleDrawAffectedMeditationFoci"/>
 		</comps>
 	</ThingDef>

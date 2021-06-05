@@ -13,8 +13,6 @@ namespace AnimaSynthesis
     public class JobGiver_AnimaScreamerBerserk : ThinkNode_JobGiver
     {
         private static readonly IntRange ExpiryInterval_Melee = new IntRange(360, 480);
-
-        private readonly float distanceToReact = 500f;
         protected override Job TryGiveJob(Pawn pawn)
         {
             if (GridsUtility.Fogged(pawn.Position, pawn.Map))
@@ -26,7 +24,7 @@ namespace AnimaSynthesis
                 return null;
             }
 
-            Pawn victim = pawn.FindPawnTarget(distanceToReact, (Thing p) => p is Pawn v && !v.Downed);
+            Pawn victim = pawn.FindPawnTarget((Thing p) => p is Pawn v && !v.Downed);
             if (victim == null)
             {
                 if (pawn.GetRoom() != null && !pawn.GetRoom().PsychologicallyOutdoors)

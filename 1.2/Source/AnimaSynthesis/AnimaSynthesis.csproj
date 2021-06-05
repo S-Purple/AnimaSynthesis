@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AS_DefOf.cs" />
     <Compile Include="CompDefensiveShield.cs" />
+    <Compile Include="CompAnimaScreamerAwakening.cs" />
     <Compile Include="JobGiver_AnimaScreamerBerserk.cs" />
     <Compile Include="Hediff_HealingEffect.cs" />
     <Compile Include="CompRegenerationField.cs" />

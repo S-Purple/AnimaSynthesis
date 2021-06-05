@@ -38,13 +38,13 @@ namespace AnimaSynthesis
             new CurvePoint(20f, 0.5f),
             new CurvePoint(30f, 0.1f),
         };
-        public static Pawn FindPawnTarget(this Pawn pawn, float distance, Predicate<Thing> customValidator = null)
+        public static Pawn FindPawnTarget(this Pawn pawn, Predicate<Thing> customValidator = null)
         {
             if (customValidator == null)
             {
                 customValidator = new Predicate<Thing>(x => true);
             }
-            bool Predicate(Thing p) => p != null && p != pawn && p.def != pawn.def && p is Pawn prey && pawn.CanReserve(p) && customValidator(p);
+            bool Predicate(Thing p) => p != null && p != pawn && p.def != pawn.def && p is Pawn prey && prey.CurJobDef != JobDefOf.Flee && pawn.CanReserve(p) && customValidator(p);
             pawn.Map.mapPawns.AllPawnsSpawned.Where(x => Predicate(x)).TryRandomElementByWeight(x => DistanceFactor.Evaluate(x.Position.DistanceTo(pawn.Position)), out Pawn victim);
             return victim;
         }

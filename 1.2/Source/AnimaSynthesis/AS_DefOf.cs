@@ -16,5 +16,6 @@ namespace AnimaSynthesis
         public static ThingDef AS_Plant_MatureTreeAnima;
         public static ThingDef AS_Plant_ElderTreeAnima;
         public static HediffDef AS_HealingEffect;
+        public static PawnKindDef AS_AnimaScreamer;
     }
 }
