@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "W90VX/cUwqd/yoIOcxc4MRGoqAIzxD3nrB+Z3t+2P66kGKt83eqeqFYunMMCUPzW37Ci9o0q6IVAJ2MP6EzGqg==",
+  "success": true,
+  "projectFilePath": "c:\\GAMES\\Rimworld\\Mods\\AnimaSynthesis\\1.2\\Source\\AnimaSynthesis\\AnimaSynthesis.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.2.2905\\krafs.rimworld.ref.1.2.2905.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
