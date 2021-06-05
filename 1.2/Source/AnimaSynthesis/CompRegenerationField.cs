@@ -68,7 +68,7 @@ namespace AnimaSynthesis
                         if (pawn.health.hediffSet.GetFirstHediffOfDef(AS_DefOf.AS_HealingEffect) is null)
                         {
                             var hediff = HediffMaker.MakeHediff(AS_DefOf.AS_HealingEffect, pawn) as Hediff_HealingEffect;
-                            hediff.parent = this.parent;
+                            hediff.hediffSource = this.parent;
                             pawn.health.AddHediff(hediff);
                         }
                     }

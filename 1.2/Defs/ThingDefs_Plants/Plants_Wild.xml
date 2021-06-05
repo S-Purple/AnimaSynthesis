@@ -197,7 +197,7 @@
 		<tickerType>Normal</tickerType>
 		<ingestible/>
 		<plant>
-			<visualSizeRange>4.9~5.7</visualSizeRange>
+			<visualSizeRange>10</visualSizeRange>
 		</plant>
 		<comps>
 			<li Class="CompProperties_SpawnSubplant">

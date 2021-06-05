@@ -11,16 +11,16 @@ namespace AnimaSynthesis
 {
     public class Hediff_HealingEffect : HediffWithComps
     {
-        public Thing parent;
+        public Thing hediffSource;
 
         private CompRegenerationField compRegenerationField;
         private CompRegenerationField CompRegenerationField
         {
             get
             {
-                if (parent != null && compRegenerationField is null)
+                if (hediffSource != null && compRegenerationField is null)
                 {
-                    compRegenerationField = parent.TryGetComp<CompRegenerationField>();
+                    compRegenerationField = hediffSource.TryGetComp<CompRegenerationField>();
                 }
                 return compRegenerationField;
             }
@@ -28,19 +28,20 @@ namespace AnimaSynthesis
         public override void Tick()
         {
             base.Tick();
-            if (parent != null && this.pawn.Position.DistanceTo(CompRegenerationField.parent.Position) > CompRegenerationField.Props.radius)
+            if (hediffSource != null && this.pawn.Position.DistanceTo(CompRegenerationField.parent.Position) > CompRegenerationField.Props.radius)
             {
                 this.pawn.health.RemoveHediff(this);
             }
-            else if (parent == null || parent.Destroyed || !parent.Spawned || (!CompRegenerationField?.Active ?? true))
+            else if (hediffSource == null || hediffSource.Destroyed || !hediffSource.Spawned || (!CompRegenerationField?.Active ?? true))
             {
                 this.pawn.health.RemoveHediff(this);
             }
         }
+
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_References.Look(ref parent, "source");
+            Scribe_References.Look(ref hediffSource, "hediffSource");
         }
     }
 }

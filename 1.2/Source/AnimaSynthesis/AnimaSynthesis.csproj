@@ -43,10 +43,12 @@
   <ItemGroup>
     <Compile Include="AS_DefOf.cs" />
     <Compile Include="CompDefensiveShield.cs" />
+    <Compile Include="JobGiver_AnimaScreamerBerserk.cs" />
     <Compile Include="Hediff_HealingEffect.cs" />
     <Compile Include="CompRegenerationField.cs" />
     <Compile Include="FocusStrengthOffset_ArtificialBuildingsOnlyIndustrialAndHiTech.cs" />
     <Compile Include="CompRainCallOnFire.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="Plant_AnimaTree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
